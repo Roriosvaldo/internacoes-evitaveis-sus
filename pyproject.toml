@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "icsap"
+version = "0.1.0"
+description = "Análise de internações por condições sensíveis à atenção primária"
+requires-python = ">=3.11"
+dependencies = [
+    "python-dotenv>=1.0",
+    "pandas>=2.0",
+    "pyarrow>=14.0",
+    "dbfread>=2.0.7",
+    "duckdb>=0.9",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.1",
+    "jupyterlab>=4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

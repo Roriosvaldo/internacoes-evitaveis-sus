@@ -1,0 +1,57 @@
+# ==== Python ====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ==== Ambientes virtuais ====
+.venv/
+.venv-teste/
+venv/
+env/
+ENV/
+
+# ==== Dados (nunca versionar) ====
+data/raw/
+data/interim/
+*.parquet
+*.csv
+!data/sample/*.csv
+
+# ==== Saídas geradas ====
+data/processed/*.parquet
+data/processed/*.csv
+data/processed/*.bak
+
+# ==== Segredos ====
+.env
+*.key
+*.pem
+
+# ==== IDE ====
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ==== Sistema ====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==== Notebooks ====
+.ipynb_checkpoints/
+
+# ==== Testes e cobertura ====
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==== Logs ====
+*.log
+logs/
