@@ -2,8 +2,10 @@ Internações Evitáveis pela Atenção Básica — Bahia vs Nordeste (2020–20
 Análise de 57,4 milhões de internações do SIH/SUS para medir a taxa de ICSAP (Internações por Condições Sensíveis à Atenção Primária) na Bahia, comparada ao Nordeste e ao Brasil.
 Resultado principal
 A Bahia empata com o Nordeste na taxa global — 18,29% vs 19,08% em 2024 — mas essa igualdade esconde movimentos opostos dentro dos grupos de causa.
-A Bahia vai pior em doenças crônicas e nutricionais (deficiências nutricionais +146%, asma +68%) e melhor em doenças infecciosas agudas (gastroenterites −38%, pneumonias −22%).
-A leitura: a atenção básica baiana funciona bem no episódico e falha no continuado. Doença infecciosa é tratada; doença crônica não é acompanhada.
+A Bahia apresenta aumento nas internações por doenças crônicas e nutricionais (deficiências nutricionais +146%, asma +68%) e redução nas infecciosas agudas (gastroenterites −38%, pneumonias −22%).
+
+A leitura: os indicadores sugerem bom desempenho no cuidado episódico e espaço para avanço no acompanhamento continuado. A condição infecciosa aguda chega tratada; a crônica ainda não é acompanhada de forma consistente.
+
 O que o projeto faz
 •	Baixa e processa 1.140 arquivos Parquet do DATASUS (57,4 milhões de registros)
 •	Classifica cada internação pela Lista Brasileira de ICSAP (Portaria MS/GM nº 221/2008)
@@ -16,17 +18,17 @@ internacoes-evitaveis-sus/
 ├── src/icsap/
 │   ├── config.py                 # caminhos e constantes
 │   ├── sih.py                    # download dos arquivos do DATASUS
-│   ├── baixar_amostra.py         # download de amostra para testes
+│   ├── baixar\_amostra.py         # download de amostra para testes
 │   ├── limpeza.py                # normalização dos campos
-│   ├── classificacao_icsap.py    # classificação pela lista ICSAP
+│   ├── classificacao\_icsap.py    # classificação pela lista ICSAP
 │   ├── analise.py                # carga e preparação da base
-│   ├── comparacao_regional.py    # BA vs NE vs Brasil
-│   ├── comparacao_grupos.py      # comparação por grupo de causa
+│   ├── comparacao\_regional.py    # BA vs NE vs Brasil
+│   ├── comparacao\_grupos.py      # comparação por grupo de causa
 │   ├── exportar.py               # saída em CSV/Parquet
 │   ├── rotulos.py                # rótulos e legendas
-│   ├── grafico_comparacao.py     # Figura 1
-│   ├── grafico_convergencia.py   # Figura 2
-│   ├── grafico_grupos.py         # Figura 3
+│   ├── grafico\_comparacao.py     # Figura 1
+│   ├── grafico\_convergencia.py   # Figura 2
+│   ├── grafico\_grupos.py         # Figura 3
 │   ├── relatorio.py              # montagem do relatório
 │   └── pipeline.py               # orquestrador
 ├── tests/                        # testes automatizados
@@ -39,7 +41,7 @@ Como reproduzir
 git clone https://github.com/Roriosvaldo/internacoes-evitaveis-sus.git
 cd internacoes-evitaveis-sus
 python -m venv .venv
-.venv\Scripts\activate
+.venv\\Scripts\\activate
 pip install -r requirements.txt
 python -m icsap.pipeline
 O pipeline baixa os arquivos do DATASUS, classifica as internações, gera as figuras e monta o relatório em data/processed/relatorio.md.
@@ -54,3 +56,4 @@ Licença
 Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
 Autor
 Roriosvaldo Nery dos Santos
+
